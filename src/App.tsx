@@ -7,6 +7,8 @@ import { CommunitiesPage } from './routes/CommunitiesPage'
 import { HowItWorksPage } from './routes/HowItWorksPage'
 import { JoinPage } from './routes/JoinPage'
 import { ProductsPage } from './routes/ProductsPage'
+import { PrivacyPage } from './routes/PrivacyPage'
+import { TermsPage } from './routes/TermsPage'
 import { NotFoundPage } from './routes/NotFoundPage'
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
 					<Route path="/communities" element={<CommunitiesPage />} />
 					<Route path="/how-it-works" element={<HowItWorksPage />} />
 					<Route path="/products" element={<ProductsPage />} />
+					<Route path="/privacy" element={<PrivacyPage />} />
+					<Route path="/terms" element={<TermsPage />} />
 				</Route>
 				<Route element={<MinimalLayout />}>
 					<Route path="/join" element={<JoinPage />} />

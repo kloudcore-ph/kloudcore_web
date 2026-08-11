@@ -26,12 +26,12 @@ export function MarketingFooter() {
 						<span className="font-display text-button uppercase text-primary">
 							{copy.footer.columns.company}
 						</span>
-						<a className={legalLinkClasses} href="#">
+						<Link className={legalLinkClasses} to="/privacy">
 							{copy.footer.legal.privacy}
-						</a>
-						<a className={legalLinkClasses} href="#">
+						</Link>
+						<Link className={legalLinkClasses} to="/terms">
 							{copy.footer.legal.terms}
-						</a>
+						</Link>
 						<a className={legalLinkClasses} href="#">
 							{copy.footer.legal.helpCenter}
 						</a>
