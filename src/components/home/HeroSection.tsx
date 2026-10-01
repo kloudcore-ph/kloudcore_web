@@ -3,7 +3,8 @@ import { useLanguage } from '../../i18n/useLanguage'
 import { homeCopy } from '../../i18n/translations/home'
 import { Section } from '../ui/Section'
 import { Reveal } from '../motion/Reveal'
-import { TayoLogoPanel } from '../ui/TayoLogoPanel'
+import { ProductLogoPanel } from '../ui/ProductLogoPanel'
+import { tayoProduct } from '../../data/products'
 import { buttonClasses } from '../ui/buttonClasses'
 
 const TAYO_URL = 'https://tayo.kloudcore.com'
@@ -11,6 +12,7 @@ const TAYO_URL = 'https://tayo.kloudcore.com'
 export function HeroSection() {
 	const { locale } = useLanguage()
 	const t = homeCopy[locale].hero
+	const tayo = tayoProduct[locale]
 
 	return (
 		<Section className="pt-12 pb-16 md:pt-16">
@@ -38,7 +40,11 @@ export function HeroSection() {
 					</Reveal>
 				</div>
 				<Reveal delay={0.15} className="lg:col-span-5">
-					<TayoLogoPanel className="aspect-[4/3]" />
+					<ProductLogoPanel
+						logoSrc={tayo.fullLogo}
+						productName={tayo.name}
+						className="aspect-[4/3]"
+					/>
 				</Reveal>
 			</div>
 		</Section>

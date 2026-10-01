@@ -1,13 +1,14 @@
 import { useLanguage } from '../i18n/useLanguage'
 import { joinCopy } from '../i18n/translations/join'
-import { tayoProduct } from '../data/products'
+import { featuredProduct, tayoProduct } from '../data/products'
 import { ContactForm } from '../components/join/ContactForm'
-import { TayoLogoPanel } from '../components/ui/TayoLogoPanel'
+import { ProductLogoPanel } from '../components/ui/ProductLogoPanel'
 
 export function JoinPage() {
 	const { locale } = useLanguage()
 	const t = joinCopy[locale]
 	const tayoUrl = tayoProduct[locale].url
+	const featured = featuredProduct[locale]
 
 	return (
 		<div className="grid grid-cols-1 lg:grid-cols-2 min-h-[calc(100dvh-4rem)]">
@@ -34,7 +35,14 @@ export function JoinPage() {
 				</div>
 			</div>
 			<div className="hidden lg:flex items-center justify-center bg-surface-container dark:bg-inverse-surface p-margin-lg">
-				<TayoLogoPanel className="w-full max-w-lg aspect-[4/3]" />
+				<div className="w-full max-w-lg space-y-6">
+					<h2 className="text-headline-md font-display">{t.featuredHeading}</h2>
+					<ProductLogoPanel
+						logoSrc={featured.fullLogo}
+						productName={featured.name}
+						className="aspect-[4/3]"
+					/>
+				</div>
 			</div>
 		</div>
 	)

@@ -7,7 +7,7 @@ import { Section } from '../components/ui/Section'
 import { PageHero } from '../components/ui/PageHero'
 import { FeatureTile } from '../components/ui/FeatureTile'
 import { CtaBand } from '../components/ui/CtaBand'
-import { TayoLogoPanel } from '../components/ui/TayoLogoPanel'
+import { ProductLogoPanel } from '../components/ui/ProductLogoPanel'
 import { Reveal } from '../components/motion/Reveal'
 import { buttonClasses } from '../components/ui/buttonClasses'
 
@@ -30,7 +30,11 @@ export function ProductsPage() {
 			<Section className="pb-24">
 				<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 					<Reveal className="lg:col-span-5">
-						<TayoLogoPanel className="aspect-[4/3]" />
+						<ProductLogoPanel
+							logoSrc={tayo.fullLogo}
+							productName={tayo.name}
+							className="aspect-[4/3]"
+						/>
 					</Reveal>
 					<Reveal delay={0.1} className="lg:col-span-7 flex flex-col gap-6">
 						<h2 className="text-headline-lg font-display">{t.flagship.title}</h2>

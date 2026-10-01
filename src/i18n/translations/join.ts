@@ -16,6 +16,7 @@ interface JoinCopy {
 	}
 	tayoNote: string
 	tayoLinkLabel: string
+	featuredHeading: string
 }
 
 export const joinCopy: Translations<JoinCopy> = {
@@ -34,7 +35,8 @@ export const joinCopy: Translations<JoinCopy> = {
 			errorGeneric: 'Something went wrong. Please try again in a moment.'
 		},
 		tayoNote: 'Already using Tayo?',
-		tayoLinkLabel: 'Go to tayo.kloudcore.com'
+		tayoLinkLabel: 'Go to tayo.kloudcore.com',
+		featuredHeading: 'Featured product'
 	},
 	ja: {
 		title: 'メッセージを送る',
@@ -51,6 +53,7 @@ export const joinCopy: Translations<JoinCopy> = {
 			errorGeneric: 'エラーが発生しました。しばらくしてからもう一度お試しください。'
 		},
 		tayoNote: 'すでにTayoをお使いですか？',
-		tayoLinkLabel: 'tayo.kloudcore.com へ'
+		tayoLinkLabel: 'tayo.kloudcore.com へ',
+		featuredHeading: '注目のプロダクト'
 	}
 }
