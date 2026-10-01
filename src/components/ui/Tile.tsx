@@ -1,13 +1,14 @@
 import type { ReactNode } from 'react'
 import { Reveal } from '../motion/Reveal'
 
-export type TileTone = 'green' | 'yellow' | 'orange' | 'paper'
+export type TileTone = 'green' | 'yellow' | 'orange' | 'paper' | 'black'
 
 const toneClasses: Record<TileTone, string> = {
 	green: 'bg-vintage-green text-white',
 	yellow: 'bg-retro-yellow text-off-black',
 	orange: 'bg-electric-orange text-off-black',
-	paper: 'bg-surface-container dark:bg-inverse-surface border border-hairline'
+	paper: 'bg-surface-container dark:bg-inverse-surface border border-hairline',
+	black: 'bg-off-black text-white',
 }
 
 interface TileProps {

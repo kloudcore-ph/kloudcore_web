@@ -20,7 +20,7 @@ export function TayoSpotlight() {
 			</Reveal>
 			<div className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-gutter">
 				<Tile
-					tone="orange"
+					tone="black"
 					className="md:col-span-5 md:row-span-2 min-h-[320px] items-center justify-center"
 				>
 					<img src="/tayo-logo-icon.svg" alt="Tayo" className="h-40 w-40" />
