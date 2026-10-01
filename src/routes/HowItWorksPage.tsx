@@ -7,11 +7,20 @@ import {
 import { useLanguage } from '../i18n/useLanguage'
 import { howItWorksCopy } from '../i18n/translations/howItWorks'
 import { Section } from '../components/ui/Section'
-import { Badge } from '../components/ui/Badge'
-import { Card } from '../components/ui/Card'
+import { PageHero } from '../components/ui/PageHero'
+import { NumberedList } from '../components/ui/NumberedList'
+import { FeatureTile } from '../components/ui/FeatureTile'
+import { CtaBand } from '../components/ui/CtaBand'
+import { Reveal } from '../components/motion/Reveal'
 import { buttonClasses } from '../components/ui/buttonClasses'
 
 const capabilityIcons = [MapPinIcon, CalendarDaysIcon, FaceSmileIcon, DevicePhoneMobileIcon]
+const capabilityLayouts = [
+	{ tone: 'yellow', span: 'md:col-span-5' },
+	{ tone: 'green', span: 'md:col-span-7' },
+	{ tone: 'paper', span: 'md:col-span-7' },
+	{ tone: 'orange', span: 'md:col-span-5' }
+] as const
 
 export function HowItWorksPage() {
 	const { locale } = useLanguage()
@@ -19,50 +28,32 @@ export function HowItWorksPage() {
 
 	return (
 		<>
-			<Section halftone borderY className="bg-paper-cream dark:bg-off-black py-20 text-center">
-				<Badge className="bg-vintage-green text-white mb-6 inline-block">{t.hero.badge}</Badge>
-				<h1 className="text-display-lg font-display uppercase text-off-black dark:text-paper-cream mb-4">
-					{t.hero.title}
-				</h1>
-				<p className="text-body-lg font-body max-w-2xl mx-auto opacity-80">{t.hero.subtitle}</p>
+			<PageHero title={t.hero.title} subtitle={t.hero.subtitle} />
+
+			<Section className="pb-24">
+				<NumberedList items={t.steps} />
 			</Section>
 
-			<Section className="py-24">
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-					{t.steps.map((step) => (
-						<Card key={step.number} className="p-8 flex flex-col gap-4">
-							<span className="text-headline-lg font-display text-primary">{step.number}</span>
-							<div className="h-1 bg-off-black dark:bg-paper-cream w-12" />
-							<h3 className="text-headline-md font-display uppercase">{step.title}</h3>
-							<p className="text-body-md font-body opacity-80">{step.description}</p>
-						</Card>
+			<Section className="py-24 bg-surface-container dark:bg-inverse-surface">
+				<Reveal>
+					<h2 className="text-headline-lg font-display">{t.capabilitiesHeading}</h2>
+				</Reveal>
+				<div className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-gutter">
+					{t.capabilities.map((capability, index) => (
+						<FeatureTile
+							key={capability.title}
+							tone={capabilityLayouts[index].tone}
+							icon={capabilityIcons[index]}
+							title={capability.title}
+							description={capability.description}
+							delay={(index % 2) * 0.1}
+							className={capabilityLayouts[index].span}
+						/>
 					))}
 				</div>
 			</Section>
 
-			<Section borderY className="py-24 bg-surface-container dark:bg-inverse-surface">
-				<h2 className="text-headline-lg font-display uppercase text-center mb-16">
-					{t.capabilitiesHeading}
-				</h2>
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-					{t.capabilities.map((capability, index) => {
-						const Icon = capabilityIcons[index]
-						return (
-							<Card key={capability.title} className="p-8 flex flex-col gap-4">
-								<Icon className="h-10 w-10 text-primary" />
-								<h4 className="text-headline-md font-display uppercase">{capability.title}</h4>
-								<p className="text-body-md font-body opacity-80">{capability.description}</p>
-							</Card>
-						)
-					})}
-				</div>
-			</Section>
-
-			<Section className="py-24 text-center">
-				<h2 className="text-headline-lg font-display uppercase mb-6">{t.cta.heading}</h2>
-				<p className="text-body-lg font-body opacity-80 mb-10 max-w-2xl mx-auto">
-					{t.cta.subtitle}
-				</p>
+			<CtaBand title={t.cta.heading} subtitle={t.cta.subtitle}>
 				<a
 					href="https://tayo.kloudcore.com"
 					target="_blank"
@@ -71,7 +62,7 @@ export function HowItWorksPage() {
 				>
 					{t.cta.button}
 				</a>
-			</Section>
+			</CtaBand>
 		</>
 	)
 }

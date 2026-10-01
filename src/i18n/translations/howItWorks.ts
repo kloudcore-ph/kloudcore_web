@@ -2,7 +2,6 @@ import type { Translations } from '../types'
 
 interface HowItWorksCopy {
 	hero: {
-		badge: string
 		title: string
 		subtitle: string
 	}
@@ -19,8 +18,7 @@ interface HowItWorksCopy {
 export const howItWorksCopy: Translations<HowItWorksCopy> = {
 	en: {
 		hero: {
-			badge: 'HOW TAYO WORKS',
-			title: 'WHERE THE MAGIC HAPPENS',
+			title: 'Where the magic happens',
 			subtitle:
 				"Three steps between 'let's remember this' and a shared album everyone can revisit."
 		},
@@ -29,7 +27,7 @@ export const howItWorksCopy: Translations<HowItWorksCopy> = {
 				number: '01',
 				title: 'Scan & Join',
 				description:
-					'Every event gets an auto-generated QR ticket. Scan it, sign in with Google, and you\'re in — no app store, no new password.'
+					'Every event gets an auto-generated QR ticket. Scan it, sign in with Google, and you\'re in. No app store, no new password.'
 			},
 			{
 				number: '02',
@@ -44,7 +42,7 @@ export const howItWorksCopy: Translations<HowItWorksCopy> = {
 					"Everyone's photos land in one day-by-day timeline, with a map view pinned by location and emoji reactions."
 			}
 		],
-		capabilitiesHeading: 'ADVANCED CAPABILITIES',
+		capabilitiesHeading: 'Advanced capabilities',
 		capabilities: [
 			{
 				title: 'Map View',
@@ -52,7 +50,7 @@ export const howItWorksCopy: Translations<HowItWorksCopy> = {
 			},
 			{
 				title: 'Day-by-Day Timeline',
-				description: 'Photos group themselves by day automatically — Day 1, Day 2, Day 3...'
+				description: 'Photos group themselves by day automatically: Day 1, Day 2, Day 3...'
 			},
 			{
 				title: 'Reactions & Attribution',
@@ -65,13 +63,12 @@ export const howItWorksCopy: Translations<HowItWorksCopy> = {
 		],
 		cta: {
 			heading: 'Ready to start your first album?',
-			subtitle: 'Tayo is live now — create an event and share the QR code with your group.',
+			subtitle: 'Tayo is live now. Create an event and share the QR code with your group.',
 			button: 'Explore Tayo'
 		}
 	},
 	ja: {
 		hero: {
-			badge: 'Tayoの仕組み',
 			title: 'マジックが起こる場所',
 			subtitle: '「これは残しておきたい」から、みんなで見返せる共有アルバムまで、たった3ステップ。'
 		},
@@ -102,7 +99,7 @@ export const howItWorksCopy: Translations<HowItWorksCopy> = {
 			},
 			{
 				title: '日ごとのタイムライン',
-				description: '写真は自動的に日ごとにグループ化されます — Day 1、Day 2、Day 3...'
+				description: '写真は自動的に日ごとにグループ化されます。Day 1、Day 2、Day 3...'
 			},
 			{
 				title: 'リアクション&投稿者表示',

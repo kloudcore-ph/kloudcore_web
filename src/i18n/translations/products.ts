@@ -2,24 +2,15 @@ import type { Translations } from '../types'
 
 interface ProductsCopy {
 	hero: {
-		badge: string
 		title: string
 		subtitle: string
 	}
 	flagship: {
-		badge: string
 		title: string
 		description: string
 		liveNow: string
 		cta: string
 		features: { title: string; description: string }[]
-	}
-	labSection: {
-		heading: string
-		label: string
-		cardTitle: string
-		cardDescription: string
-		cardCta: string
 	}
 	cta: {
 		heading: string
@@ -31,15 +22,13 @@ interface ProductsCopy {
 export const productsCopy: Translations<ProductsCopy> = {
 	en: {
 		hero: {
-			badge: 'OUR ECOSYSTEM',
-			title: 'OUR LINEUP',
-			subtitle: 'We build focused apps for real communities — starting with Tayo.'
+			title: 'Our lineup',
+			subtitle: 'We build focused apps for real communities, starting with Tayo.'
 		},
 		flagship: {
-			badge: 'Flagship App',
 			title: 'Tayo: Shared Memories, Simplified',
 			description:
-				"Tayo turns any trip, wedding, or gathering into one shared photo album. Scan a QR code, sign in with Google, and everyone's photos land together — organized by day, pinned on a map, and easy to relive.",
+				"Tayo turns any trip, wedding, or gathering into one shared photo album. Scan a QR code, sign in with Google, and everyone's photos land together: organized by day, pinned on a map, and easy to relive.",
 			liveNow: 'Live Now',
 			cta: 'Explore Tayo',
 			features: [
@@ -50,7 +39,7 @@ export const productsCopy: Translations<ProductsCopy> = {
 				},
 				{
 					title: 'Day-by-Day Memory Timeline',
-					description: 'Every photo sorts itself into the day it was taken — no albums to manage.'
+					description: 'Every photo sorts itself into the day it was taken. No albums to manage.'
 				},
 				{
 					title: 'Photos Mapped by Moment',
@@ -58,16 +47,8 @@ export const productsCopy: Translations<ProductsCopy> = {
 				}
 			]
 		},
-		labSection: {
-			heading: 'IN THE LAB',
-			label: "WHAT'S NEXT",
-			cardTitle: 'Got an idea for the next Kloudcore app?',
-			cardDescription:
-				"We build apps around real communities — if you've got one in mind, we want to hear about it.",
-			cardCta: 'Share Your Idea'
-		},
 		cta: {
-			heading: 'HAVE AN IDEA WORTH BUILDING?',
+			heading: 'Have an idea worth building?',
 			subtitle:
 				"We prioritize new apps based on real community needs. Tell us what you're missing.",
 			button: 'Pitch Your Idea'
@@ -75,12 +56,10 @@ export const productsCopy: Translations<ProductsCopy> = {
 	},
 	ja: {
 		hero: {
-			badge: '私たちのエコシステム',
 			title: 'ラインナップ',
 			subtitle: '私たちは実在するコミュニティのために特化したアプリを作ります。第一弾はTayoです。'
 		},
 		flagship: {
-			badge: '主力アプリ',
 			title: 'Tayo：思い出の共有を、シンプルに',
 			description:
 				'Tayoは旅行、結婚式、集まりをひとつの共有フォトアルバムに変えます。QRコードをスキャンしてGoogleでサインインするだけで、みんなの写真が一箇所に集まります。日ごとに整理され、地図にピンされ、簡単に振り返れます。',
@@ -100,14 +79,6 @@ export const productsCopy: Translations<ProductsCopy> = {
 					description: 'マップビューに切り替えれば、思い出が起きた場所が正確にわかります。'
 				}
 			]
-		},
-		labSection: {
-			heading: '開発中',
-			label: '次に来るもの',
-			cardTitle: '次のKloudcoreアプリのアイデアはありますか？',
-			cardDescription:
-				'私たちは実在するコミュニティを中心にアプリを作ります。アイデアがあればぜひ教えてください。',
-			cardCta: 'アイデアを共有する'
 		},
 		cta: {
 			heading: '作る価値のあるアイデアはありますか？',

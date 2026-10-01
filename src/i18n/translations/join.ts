@@ -1,44 +1,56 @@
 import type { Translations } from '../types'
 
 interface JoinCopy {
-	badge: string
 	title: string
 	subtitle: string
 	form: {
 		name: string
 		email: string
+		message: string
 		submit: string
+		submitting: string
+		successTitle: string
+		successBody: string
+		errorCaptcha: string
+		errorGeneric: string
 	}
 	tayoNote: string
-	sticker: string
-	collageBadge: string
+	tayoLinkLabel: string
 }
 
 export const joinCopy: Translations<JoinCopy> = {
 	en: {
-		badge: 'MEMBER REGISTRATION',
-		title: 'JOIN THE MOVEMENT',
-		subtitle: 'Get updates from Kloudcore and be first to hear about new apps.',
+		title: 'Send us a message',
+		subtitle: 'Questions, ideas or feedback? Write to us and we will reply by email.',
 		form: {
 			name: 'Your name',
 			email: 'Your email',
-			submit: 'START SHARING'
+			message: 'Your message',
+			submit: 'Send message',
+			submitting: 'Sending...',
+			successTitle: 'Message sent',
+			successBody: 'Thanks for writing. We will reply to your email soon.',
+			errorCaptcha: 'Verification failed. Please try again.',
+			errorGeneric: 'Something went wrong. Please try again in a moment.'
 		},
-		tayoNote: 'Already using Tayo? Go to tayo.kloudcore.com',
-		sticker: 'REAL PHOTOS. REAL MOMENTS.',
-		collageBadge: 'SHARING MEMORIES'
+		tayoNote: 'Already using Tayo?',
+		tayoLinkLabel: 'Go to tayo.kloudcore.com'
 	},
 	ja: {
-		badge: '会員登録',
-		title: 'ムーブメントに参加しよう',
-		subtitle: 'Kloudcoreからの最新情報を受け取り、新しいアプリをいち早くチェックしましょう。',
+		title: 'メッセージを送る',
+		subtitle: 'ご質問、アイデア、ご意見をお寄せください。メールでお返事します。',
 		form: {
 			name: 'お名前',
 			email: 'メールアドレス',
-			submit: '共有をはじめる'
+			message: 'メッセージ',
+			submit: 'メッセージを送信',
+			submitting: '送信中...',
+			successTitle: '送信しました',
+			successBody: 'メッセージをありがとうございます。メールで近日中にお返事します。',
+			errorCaptcha: '確認に失敗しました。もう一度お試しください。',
+			errorGeneric: 'エラーが発生しました。しばらくしてからもう一度お試しください。'
 		},
-		tayoNote: 'すでにTayoをお使いですか？ tayo.kloudcore.com へ',
-		sticker: 'リアルな写真。リアルな瞬間。',
-		collageBadge: '思い出を共有する'
+		tayoNote: 'すでにTayoをお使いですか？',
+		tayoLinkLabel: 'tayo.kloudcore.com へ'
 	}
 }

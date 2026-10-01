@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "./fonts.css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* Retro-Pulse brand colors */
   --color-off-black: #1a1a1c;
@@ -10,12 +12,12 @@
   --color-retro-yellow: #ffee52;
 
   /* semantic tokens (light defaults; dark overrides applied via .dark below) */
-  --color-background: #fef9ed;
-  --color-on-background: #1d1c15;
-  --color-surface: #fef9ed;
-  --color-surface-container: #f2ede2;
-  --color-surface-container-high: #ede8dc;
-  --color-on-surface: #1d1c15;
+  --color-background: #ffffff;
+  --color-on-background: #1a1a1c;
+  --color-surface: #ffffff;
+  --color-surface-container: #f5f5f4;
+  --color-surface-container-high: #ebebe9;
+  --color-on-surface: #1a1a1c;
   --color-on-surface-variant: #58413d;
   --color-inverse-surface: #323029;
   --color-inverse-on-surface: #f5f0e4;
@@ -26,18 +28,19 @@
   --color-secondary: #386755;
   --color-on-secondary: #ffffff;
   --color-secondary-fixed-dim: #9fd1ba;
+  --color-hairline: rgb(26 26 28 / 0.15);
 
   /* typography */
-  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-display: "Geist Sans", sans-serif;
   --font-body: "Work Sans", sans-serif;
   --font-mono: "Space Mono", monospace;
 
-  --text-display-lg: 72px;
+  --text-display-lg: clamp(2.75rem, 7vw, 4.5rem);
   --text-display-lg--line-height: 1.1;
   --text-display-lg--letter-spacing: -0.04em;
   --text-display-lg--font-weight: 800;
 
-  --text-headline-lg: 48px;
+  --text-headline-lg: clamp(2rem, 4.5vw, 3rem);
   --text-headline-lg--line-height: 1.2;
   --text-headline-lg--letter-spacing: -0.02em;
   --text-headline-lg--font-weight: 700;
@@ -63,105 +66,21 @@
 
   /* shape / spacing */
   --radius-DEFAULT: 0.5rem;
+  --radius-card: 1rem;
   --spacing-gutter: 24px;
   --spacing-margin-sm: 16px;
   --spacing-margin-md: 32px;
   --spacing-margin-lg: 64px;
 }
 
-@keyframes slide-up {
-  from { opacity: 0; transform: translateY(50px) scale(0.9); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-@keyframes fade-in-left {
-  from { opacity: 0; transform: translateX(-30px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fade-in-right {
-  from { opacity: 0; transform: translateX(30px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes infinite-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-.animate-slide-up {
-  animation: slide-up 0.6s ease-out;
-}
-
-.animate-fade-in-left {
-  animation: fade-in-left 0.8s ease-out 0.2s both;
-}
-
-.animate-fade-in-right {
-  animation: fade-in-right 0.8s ease-out 0.4s both;
-}
-
-.animate-infinite-scroll {
-  animation: infinite-scroll linear infinite;
-}
-
-.brutalist-shadow {
-  box-shadow: 4px 4px 0 0 var(--color-off-black);
+.dark {
+  --color-hairline: rgb(249 244 232 / 0.18);
 }
 
 .brutalist-shadow-lg {
   box-shadow: 8px 8px 0 0 var(--color-off-black);
 }
 
-.hover-lift {
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.hover-lift:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 10px 10px 0 0 var(--color-off-black);
-}
-
-.active-press {
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-
-.active-press:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 0 var(--color-off-black);
-}
-
-.active-press:active {
-  transform: translate(4px, 4px);
-  box-shadow: 0 0 0 0 var(--color-off-black);
-}
-
-.halftone-bg {
-  background-image: radial-gradient(var(--color-off-black) 1px, transparent 0);
-  background-size: 20px 20px;
-  opacity: 0.05;
-}
-
-.dark .brutalist-shadow {
-  box-shadow: 4px 4px 0 0 var(--color-paper-cream);
-}
-
 .dark .brutalist-shadow-lg {
   box-shadow: 8px 8px 0 0 var(--color-paper-cream);
-}
-
-.dark .hover-lift:hover {
-  box-shadow: 10px 10px 0 0 var(--color-paper-cream);
-}
-
-.dark .active-press:hover {
-  box-shadow: 2px 2px 0 0 var(--color-paper-cream);
-}
-
-.dark .active-press:active {
-  box-shadow: 0 0 0 0 var(--color-paper-cream);
-}
-
-.dark .halftone-bg {
-  background-image: radial-gradient(var(--color-paper-cream) 1px, transparent 0);
 }

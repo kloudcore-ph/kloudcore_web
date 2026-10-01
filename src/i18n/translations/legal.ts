@@ -6,7 +6,6 @@ export interface LegalSection {
 }
 
 export interface LegalCopy {
-	badge: string
 	title: string
 	updatedLabel: string
 	updatedDate: string
@@ -16,8 +15,7 @@ export interface LegalCopy {
 
 export const privacyCopy: Translations<LegalCopy> = {
 	en: {
-		badge: 'LEGAL',
-		title: 'PRIVACY POLICY',
+		title: 'Privacy Policy',
 		updatedLabel: 'Last updated',
 		updatedDate: 'August 12, 2026',
 		intro:
@@ -97,7 +95,6 @@ export const privacyCopy: Translations<LegalCopy> = {
 		]
 	},
 	ja: {
-		badge: '法的情報',
 		title: 'プライバシーポリシー',
 		updatedLabel: '最終更新日',
 		updatedDate: '2026年8月12日',
@@ -181,8 +178,7 @@ export const privacyCopy: Translations<LegalCopy> = {
 
 export const termsCopy: Translations<LegalCopy> = {
 	en: {
-		badge: 'LEGAL',
-		title: 'TERMS OF SERVICE',
+		title: 'Terms of Service',
 		updatedLabel: 'Last updated',
 		updatedDate: 'August 12, 2026',
 		intro:
@@ -261,7 +257,6 @@ export const termsCopy: Translations<LegalCopy> = {
 		]
 	},
 	ja: {
-		badge: '法的情報',
 		title: '利用規約',
 		updatedLabel: '最終更新日',
 		updatedDate: '2026年8月12日',

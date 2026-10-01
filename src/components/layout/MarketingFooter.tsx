@@ -11,7 +11,7 @@ export function MarketingFooter() {
 	const year = new Date().getFullYear()
 
 	return (
-		<footer className="bg-paper-cream dark:bg-inverse-surface border-t-2 border-off-black dark:border-paper-cream/70 py-16">
+		<footer className="bg-background dark:bg-inverse-surface border-t border-hairline py-16">
 			<div className="max-w-[1280px] mx-auto px-margin-sm md:px-margin-lg flex flex-col md:flex-row justify-between items-start gap-12">
 				<div className="space-y-4 max-w-xs">
 					<span className="text-headline-md font-display text-off-black dark:text-paper-cream block">
@@ -23,7 +23,7 @@ export function MarketingFooter() {
 				</div>
 				<div className="grid grid-cols-2 sm:grid-cols-3 gap-12 w-full md:w-auto">
 					<div className="flex flex-col gap-3">
-						<span className="font-display text-button uppercase text-primary">
+						<span className="font-display text-button text-primary">
 							{copy.footer.columns.company}
 						</span>
 						<Link className={legalLinkClasses} to="/privacy">
@@ -37,7 +37,7 @@ export function MarketingFooter() {
 						</a>
 					</div>
 					<div className="flex flex-col gap-3">
-						<span className="font-display text-button uppercase text-primary">
+						<span className="font-display text-button text-primary">
 							{copy.footer.columns.platform}
 						</span>
 						<Link className={legalLinkClasses} to="/how-it-works">
@@ -51,7 +51,7 @@ export function MarketingFooter() {
 						</Link>
 					</div>
 					<div className="flex flex-col gap-3">
-						<span className="font-display text-button uppercase text-primary">
+						<span className="font-display text-button text-primary">
 							{copy.footer.columns.contact}
 						</span>
 						<a className={legalLinkClasses} href={`mailto:${copy.footer.contactEmail}`}>
@@ -60,7 +60,7 @@ export function MarketingFooter() {
 					</div>
 				</div>
 			</div>
-			<div className="max-w-[1280px] mx-auto px-margin-sm md:px-margin-lg mt-16 pt-8 border-t-2 border-off-black dark:border-paper-cream/70 border-dashed">
+			<div className="max-w-[1280px] mx-auto px-margin-sm md:px-margin-lg mt-16 pt-8 border-t border-hairline">
 				<p className="font-mono text-label-mono text-off-black dark:text-paper-cream opacity-60 text-center md:text-left uppercase">
 					© {year} {copy.footer.copyrightSuffix}
 				</p>

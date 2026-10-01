@@ -7,11 +7,9 @@ export function NotFoundPage() {
 	const { locale } = useLanguage()
 
 	return (
-		<Section halftone className="py-32 text-center">
-			<h1 className="text-display-lg font-display uppercase text-off-black dark:text-paper-cream mb-4">
-				404
-			</h1>
-			<p className="text-body-lg font-body opacity-80 mb-10">
+		<Section className="py-32">
+			<h1 className="text-display-lg font-display text-off-black dark:text-paper-cream mb-4">404</h1>
+			<p className="text-body-lg font-body text-off-black/80 dark:text-inverse-on-surface/80 mb-10">
 				{locale === 'ja' ? 'ページが見つかりません。' : "This page doesn't exist."}
 			</p>
 			<Link to="/" className={buttonClasses('primary')}>

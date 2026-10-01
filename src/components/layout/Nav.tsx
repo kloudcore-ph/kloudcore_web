@@ -7,47 +7,48 @@ import { buttonClasses } from '../ui/buttonClasses'
 
 function navLinkClasses({ isActive }: { isActive: boolean }) {
 	const state = isActive
-		? 'border-b-4 border-retro-yellow pb-1'
-		: 'opacity-80 hover:opacity-100'
-	return `text-button font-display uppercase text-off-black dark:text-paper-cream transition-transform hover:-translate-y-0.5 ${state}`
+		? 'underline decoration-2 decoration-primary underline-offset-8'
+		: 'opacity-70 hover:opacity-100'
+	return `font-display font-semibold text-off-black dark:text-paper-cream transition-opacity ${state}`
 }
 
 function mobileNavLinkClasses({ isActive }: { isActive: boolean }) {
-	const state = isActive ? 'text-primary' : 'text-off-black dark:text-paper-cream opacity-80'
-	return `text-headline-md font-display uppercase ${state}`
+	const state = isActive ? 'text-primary' : 'text-off-black dark:text-paper-cream'
+	return `text-headline-md font-display ${state}`
 }
 
 export function Nav() {
 	const { locale } = useLanguage()
 	const t = commonCopy[locale].nav
 	const [menuOpen, setMenuOpen] = useState(false)
+	const closeMenu = () => setMenuOpen(false)
+
+	const navItems = [
+		{ to: '/', label: t.home, end: true },
+		{ to: '/communities', label: t.communities, end: false },
+		{ to: '/how-it-works', label: t.features, end: false },
+		{ to: '/products', label: t.products, end: false }
+	]
 
 	return (
-		<nav className="bg-background dark:bg-off-black border-b-2 border-off-black dark:border-paper-cream/70 sticky top-0 z-40">
-			<div className="flex justify-between items-center w-full px-margin-sm md:px-margin-lg h-20 max-w-[1280px] mx-auto">
-				<Link to="/" className="flex items-center gap-3" onClick={() => setMenuOpen(false)}>
-					<img src="/kloudcore_new_logo.png" alt="Kloudcore" className="h-9 w-9" />
-					<span className="text-headline-md font-display font-extrabold text-off-black dark:text-paper-cream tracking-tight">
+		<nav className="bg-background dark:bg-off-black border-b border-hairline sticky top-0 z-40">
+			<div className="flex justify-between items-center w-full px-margin-sm md:px-margin-lg h-16 max-w-[1280px] mx-auto">
+				<Link to="/" className="flex items-center gap-3" onClick={closeMenu}>
+					<img src="/kloudcore_new_logo.png" alt="Kloudcore" className="h-8 w-8" />
+					<span className="text-2xl font-display font-extrabold text-off-black dark:text-paper-cream tracking-tight">
 						KLOUDCORE
 					</span>
 				</Link>
-				<div className="hidden md:flex gap-6 items-center">
-					<NavLink to="/" end className={navLinkClasses}>
-						{t.home}
-					</NavLink>
-					<NavLink to="/communities" className={navLinkClasses}>
-						{t.communities}
-					</NavLink>
-					<NavLink to="/how-it-works" className={navLinkClasses}>
-						{t.features}
-					</NavLink>
-					<NavLink to="/products" className={navLinkClasses}>
-						{t.products}
-					</NavLink>
+				<div className="hidden md:flex gap-8 items-center">
+					{navItems.map((item) => (
+						<NavLink key={item.to} to={item.to} end={item.end} className={navLinkClasses}>
+							{item.label}
+						</NavLink>
+					))}
 				</div>
 				<div className="flex items-center gap-4">
 					<div className="hidden sm:block">
-						<Link to="/join" className={buttonClasses('accent', 'px-6 py-2 text-sm')}>
+						<Link to="/join" className={buttonClasses('accent', 'px-5 py-2 text-base')}>
 							{t.joinUs}
 						</Link>
 					</div>
@@ -55,43 +56,30 @@ export function Nav() {
 						onClick={() => setMenuOpen((prev) => !prev)}
 						aria-label="Toggle menu"
 						aria-expanded={menuOpen}
-						className="md:hidden border-2 border-off-black dark:border-paper-cream/70 p-2 text-off-black dark:text-paper-cream"
+						className="md:hidden rounded-lg border border-off-black dark:border-paper-cream/70 p-2 text-off-black dark:text-paper-cream"
 					>
 						{menuOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
 					</button>
 				</div>
 			</div>
 			{menuOpen && (
-				<div className="md:hidden border-t-2 border-off-black dark:border-paper-cream/70 bg-background dark:bg-off-black px-margin-sm py-6 flex flex-col gap-5">
-					<NavLink to="/" end className={mobileNavLinkClasses} onClick={() => setMenuOpen(false)}>
-						{t.home}
-					</NavLink>
-					<NavLink
-						to="/communities"
-						className={mobileNavLinkClasses}
-						onClick={() => setMenuOpen(false)}
-					>
-						{t.communities}
-					</NavLink>
-					<NavLink
-						to="/how-it-works"
-						className={mobileNavLinkClasses}
-						onClick={() => setMenuOpen(false)}
-					>
-						{t.features}
-					</NavLink>
-					<NavLink
-						to="/products"
-						className={mobileNavLinkClasses}
-						onClick={() => setMenuOpen(false)}
-					>
-						{t.products}
-					</NavLink>
+				<div className="md:hidden border-t border-hairline bg-background dark:bg-off-black px-margin-sm py-6 flex flex-col gap-5">
+					{navItems.map((item) => (
+						<NavLink
+							key={item.to}
+							to={item.to}
+							end={item.end}
+							className={mobileNavLinkClasses}
+							onClick={closeMenu}
+						>
+							{item.label}
+						</NavLink>
+					))}
 					<div className="sm:hidden">
 						<Link
 							to="/join"
 							className={buttonClasses('accent', 'w-full justify-center mt-2')}
-							onClick={() => setMenuOpen(false)}
+							onClick={closeMenu}
 						>
 							{t.joinUs}
 						</Link>

@@ -2,7 +2,6 @@ import type { Translations } from '../types'
 
 interface CommunitiesCopy {
 	hero: {
-		badge: string
 		title: string
 		subtitle: string
 		searchPlaceholder: string
@@ -22,18 +21,17 @@ interface CommunitiesCopy {
 export const communitiesCopy: Translations<CommunitiesCopy> = {
 	en: {
 		hero: {
-			badge: 'REAL EVENTS, REAL PEOPLE',
-			title: 'FIND YOUR MOMENT',
-			subtitle: 'Tayo works for any gathering worth remembering — pick your kind of moment below.',
+			title: 'Find your moment',
+			subtitle: 'Tayo works for any gathering worth remembering. Pick your kind of moment below.',
 			searchPlaceholder: 'Search event types...',
-			searchComingSoon: 'Community search — coming soon'
+			searchComingSoon: 'Community search is coming soon'
 		},
-		eventTypesHeading: 'BUILT FOR MOMENTS LIKE',
+		eventTypesHeading: 'Built for moments like',
 		eventTypes: [
 			{
 				title: 'Trips',
 				description:
-					'Road trips, backpacking, family vacations — every photo from everyone, in one place.'
+					'Road trips, backpacking, family vacations. Every photo from everyone, in one place.'
 			},
 			{
 				title: 'Weddings',
@@ -48,11 +46,11 @@ export const communitiesCopy: Translations<CommunitiesCopy> = {
 			{
 				title: 'Friend Hangouts',
 				description:
-					"Birthdays, game nights, spontaneous meetups — capture it before it's just a memory."
+					"Birthdays, game nights, spontaneous meetups. Capture it before it's just a memory."
 			}
 		],
 		closing: {
-			heading: 'PLANNING SOMETHING WORTH REMEMBERING?',
+			heading: 'Planning something worth remembering?',
 			subtitle: 'Start a Tayo album and invite everyone with a single QR code.',
 			cta: 'Start a Tayo Album',
 			ideaPrompt: 'Got an idea for a new kind of event?',
@@ -61,17 +59,16 @@ export const communitiesCopy: Translations<CommunitiesCopy> = {
 	},
 	ja: {
 		hero: {
-			badge: 'リアルなイベント、リアルな人々',
 			title: 'あなたの瞬間を見つけよう',
 			subtitle: 'Tayoは思い出に残るどんな集まりにも使えます。下から自分に合ったものを選んでください。',
 			searchPlaceholder: 'イベントの種類を検索...',
-			searchComingSoon: 'コミュニティ検索— 近日公開'
+			searchComingSoon: 'コミュニティ検索は近日公開'
 		},
 		eventTypesHeading: 'こんな瞬間のために',
 		eventTypes: [
 			{
 				title: '旅行',
-				description: 'ロードトリップ、バックパック旅行、家族旅行 — みんなの写真が一箇所に。'
+				description: 'ロードトリップ、バックパック旅行、家族旅行。みんなの写真が一箇所に。'
 			},
 			{
 				title: '結婚式',
@@ -83,7 +80,7 @@ export const communitiesCopy: Translations<CommunitiesCopy> = {
 			},
 			{
 				title: '友達との集まり',
-				description: '誕生日、ゲームナイト、思いつきの集まり — ただの記憶になる前に残そう。'
+				description: '誕生日、ゲームナイト、思いつきの集まり。ただの記憶になる前に残そう。'
 			}
 		],
 		closing: {
