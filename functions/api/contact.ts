@@ -3,6 +3,7 @@ import {
 	type ContactErrorCode,
 	type ContactSubmission
 } from '../../src/data/contact'
+import { renderContactEmail } from '../_lib/contactEmail'
 
 interface Env {
 	TURNSTILE_SECRET_KEY: string
@@ -78,7 +79,9 @@ async function verifyTurnstile(token: string, clientIp: string | null, env: Env)
 	}
 }
 
-async function sendEmail({ name, email, message }: ContactSubmission, env: Env) {
+async function sendEmail(submission: ContactSubmission, env: Env) {
+	const { subject, html, text } = renderContactEmail(submission)
+
 	try {
 		const response = await fetch(RESEND_SEND_URL, {
 			method: 'POST',
@@ -89,9 +92,10 @@ async function sendEmail({ name, email, message }: ContactSubmission, env: Env) 
 			body: JSON.stringify({
 				from: env.CONTACT_FROM_EMAIL,
 				to: env.CONTACT_TO_EMAIL,
-				reply_to: email,
-				subject: `Kloudcore website message from ${name}`,
-				text: `From: ${name} <${email}>\n\n${message}`
+				reply_to: submission.email,
+				subject,
+				html,
+				text
 			})
 		})
 		return response.ok
